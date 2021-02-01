@@ -12,9 +12,12 @@ class QuotesSpider(scrapy.Spider):
         self.logger.info('hello this is my first spider')
         establishments = response.css('td')
         for establishment in establishments:
+            bits_list = establishment.css('div').css('span::text').getall()
             yield {
                 'name': establishment.css('.hidden-xs::text').get(),
-                'bits': establishment.css('div').css('span::text').getall(),
+                'address': bits_list[0],
+                'last inspection': bits_list[1],
+                'type': bits_list[2],
             }
 
 # response.css('td').css('.hidden-xs::text').get()
