@@ -14,6 +14,7 @@ class QuotesSpider(scrapy.Spider):
         for establishment in establishments:
             yield {
                 'name': establishment.css('.hidden-xs::text').get(),
+                'bits': establishment.css('div').css('span::text').getall(),
             }
 
 # response.css('td').css('.hidden-xs::text').get()
