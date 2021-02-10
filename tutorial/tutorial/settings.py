@@ -86,3 +86,15 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# For scrapy-selenium, https://github.com/clemfromspace/scrapy-selenium
+from shutil import which
+
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
+SELENIUM_DRIVER_ARGUMENTS = ['foo'] # '-headless' w/ one dash, if using firefox instead of chrome
+# SELENIUM_DRIVER_ARGUMENTS = ['--headless'] # '-headless' w/ one dash, if using firefox instead of chrome
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800,
+}

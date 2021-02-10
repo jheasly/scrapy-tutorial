@@ -1,3 +1,5 @@
-*.json
-*.xml
 *.csv
+*.json
+*.png
+*.xml
+tutorial/.DS_Store
