@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 5
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -87,14 +87,16 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-# For scrapy-selenium, https://github.com/clemfromspace/scrapy-selenium
-from shutil import which
+# # For scrapy-selenium, https://github.com/clemfromspace/scrapy-selenium
+# from shutil import which
 
-SELENIUM_DRIVER_NAME = 'chrome'
-SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
-# SELENIUM_DRIVER_ARGUMENTS = ['foo'] # '-headless' w/ one dash, if using firefox instead of chrome
-SELENIUM_DRIVER_ARGUMENTS = ['--headless'] # '-headless' w/ one dash, if using firefox instead of chrome
+# SELENIUM_DRIVER_NAME = 'chrome'
+# SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
+# # SELENIUM_DRIVER_ARGUMENTS = ['foo'] # '-headless' w/ one dash, if using firefox instead of chrome
+# SELENIUM_DRIVER_ARGUMENTS = ['--headless'] # '-headless' w/ one dash, if using firefox instead of chrome
 
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy_selenium.SeleniumMiddleware': 800,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     'scrapy_selenium.SeleniumMiddleware': 800,
+# }
+
+# LOG_LEVEL = 'INFO'
